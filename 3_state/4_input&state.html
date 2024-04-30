@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3_stateFunction</title>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    function App () {
+      const [minutes, setMinutes] = React.useState();
+      const onChange = (event) => {
+        setMinutes(event.target.value);
+      }
+
+      return (
+        <div>
+          <h1 class="hi">Super Converter(class is wrong)</h1>
+          <h1 className="hi">Super Converter(className is right)</h1>
+
+          <label for="minutes">Minutes(for is wrong)</label><br/>
+          <label htmlFor="minutes">Minutes(htmlFor is right)</label><br/>
+          <input
+            value={minutes}
+            id="minutes"
+            type="number"
+            placeholder="Minutes"
+            onChange={onChange}
+          />
+
+          <br/><br/>
+
+          <label for="hours">Hours</label><br/>
+          <label htmlFor="hours">Hours</label><br/>
+          <input id="hours" placeholder="Hours"/>
+
+          <br/><br/>
+
+          class와 for은 javascript 용어에 존재하는 애들이기 때문에<br/>
+          class 대신에 className, for 대신에 htmlFor을 사용
+        </div>
+      );
+    }
+
+    ReactDOM.render(<App />, root);
+  </script>
+</body>
+</html>

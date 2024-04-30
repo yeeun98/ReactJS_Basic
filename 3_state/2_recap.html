@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    // 데이터가 바뀔때마다 컴포넌트를 리렌더링하고 UI를 refresh한다.
+    // 하지만 React는 setState에서 설정한 값은 유지한체 리렌더링한다.
+    function App () {
+      const [counter, setCounter] = React.useState(10);
+      const [counter2, setCounter2] = React.useState(0);
+      let a = 2;
+      console.log(counter, setCounter, a);
+      const onClick = () => {
+        // setCounter 함수는 매개변수 값으로 값을 업데이트하고 리렌더링을 일으키는 함수
+        a = 4;
+        console.log(a)
+        setCounter(counter + 1)
+      }
+      const onClick2 = () => {
+        // setCounter 함수는 매개변수 값으로 값을 업데이트하고 리렌더링을 일으키는 함수
+        setCounter2(counter2 + 1)
+      }
+
+
+      return (
+        <div>
+          <h3>Total clicks : {counter}</h3>
+          <h3>Total clicks counter2 : {counter2}</h3>
+          <button onClick={onClick}>Click me</button>
+          <button onClick={onClick2}>Click me</button>
+        </div>
+      );
+    }
+
+    ReactDOM.render(<App />, root);
+  </script>
+</body>
+</html>
