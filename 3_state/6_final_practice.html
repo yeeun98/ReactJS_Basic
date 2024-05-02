@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6_final_practice</title>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<style>
+  @font-face {
+    font-family: 'TTHakgyoansimYeohaengR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_keris@1.0/TTHakgyoansimYeohaengR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    margin: 0;
+  }
+  body * {
+    font-family: 'TTHakgyoansimYeohaengR';
+  }
+  
+  #root {
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 0 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #6E30F4;
+  }
+  
+  .converter {
+    font-family: 'TTHakgyoansimYeohaengR';
+    padding: 30px 100px 60px 100px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 30px;
+  }
+  .converter__section {
+    width: 100%;
+    height: 100%;
+  }
+  .converter__select {
+    margin-bottom: 10px;
+  }
+</style>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    function MinutesToHours() {
+      const [amount, setAmount] = React.useState(0);
+      const [flip, setFlipped] = React.useState(false);
+      
+      const onChange = (event) => {
+        setAmount(event.target.value);
+      };
+      const reset = () => setAmount(0);
+      const onFlip = () => {
+        reset();
+        setFlipped((current) => !current);
+      }
+
+      return (
+        <section className="converter__section">
+          <div>
+            <label htmlFor="amount">Minutes</label><br/>
+            <input
+              value={flip ? amount * 60 : amount}
+              id="amount"
+              type="number"
+              placeholder="Minutes"
+              onChange={onChange}
+              disabled={flip}
+            />
+          </div>
+            
+          <br />
+            
+          <div>
+            <label htmlFor="hours">Hours</label><br/>
+            <input
+              value={flip ? amount : Math.round(amount / 60)}
+              id="hours"
+              placeholder="Hours"
+              onChange={onChange}
+              disabled={!flip}
+            />
+          </div>
+
+          <br />
+
+          <button onClick={reset}>Reset</button>
+          <button onClick={onFlip}>
+            {!flip ? 'Invert' : 'Turn Back'}
+          </button>
+        </section>
+      );
+    }
+
+    function KmToMiles() {
+      const [amount, setAmount] = React.useState(0);
+      const [flip, setFlipped] = React.useState(false);
+      
+      const onChange = (event) => {
+        setAmount(event.target.value);
+      };
+      const reset = () => setAmount(0);
+      const onFlip = () => {
+        reset();
+        setFlipped((current) => !current);
+      }
+
+      return (
+        <section className="converter__section">
+          <div>
+            <label htmlFor="amount">Km</label><br/>
+            <input
+              value={flip ? Number.parseInt((amount * 1.609344) * 1000000) / 1000000 : amount}
+              id="amount"
+              type="number"
+              placeholder="Minutes"
+              onChange={onChange}
+              disabled={flip}
+            />
+          </div>
+            
+          <br />
+            
+          <div>
+            <label htmlFor="hours">Miles</label><br/>
+            <input
+              value={flip ? amount : Number.parseInt((amount / 1.609344) * 1000000) / 1000000}
+              id="hours"
+              placeholder="Hours"
+              onChange={onChange}
+              disabled={!flip}
+            />
+          </div>
+
+          <br />
+
+          <button onClick={reset}>Reset</button>
+          <button onClick={onFlip}>
+            {!flip ? 'Invert' : 'Turn Back'}
+          </button>
+        </section>
+      );
+    }
+
+    function App () {
+      const [index, setIndex] = React.useState('init');
+      const onSelect = (event) => {
+        setIndex(event.target.value);
+      }
+
+      return (
+        <div className="converter">
+          <h1 className="hi">Super Converter</h1>
+
+          <select className="converter__select" value={index} onChange={onSelect}>
+            <option value="init">Select you units</option>
+            <option value="0">Minutes & Hours</option>
+            <option value="1">Km & Miles</option>  
+          </select>
+
+          {index === '0' ? <MinutesToHours /> : index === '1' ? <KmToMiles /> : 'Please select your units'}
+        </div>
+      );
+    }
+
+    ReactDOM.render(<App />, root);
+  </script>
+</body>
+</html>
