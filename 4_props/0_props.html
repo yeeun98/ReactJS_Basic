@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>#4.0 props</title>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    // function SaveBtn() {
+    //   return (
+    //     <button
+    //       style={{
+    //         backgroundColor: "skyblue",
+    //         color: 'white',
+    //         padding: '10px 20px',
+    //         border: 0,
+    //         'margin-right': '10px'
+    //       }}
+    //     >
+    //       Save Changes
+    //     </button>)
+    // }
+    // function ConfirmBtn() {
+    //   return (
+    //     <button
+    //       style={{
+    //         backgroundColor: "skyblue",
+    //         color: 'white',
+    //         padding: '10px 20px',
+    //         border: 0
+    //       }}
+    //     >  
+    //       Confirm
+    //     </button>)
+    // }
+
+    function Btn({type, big}) {
+      console.log(type, big)
+      return (
+        <button
+          style={{
+            backgroundColor: "skyblue",
+            color: 'white',
+            padding: '10px 20px',
+            border: 0,
+            'margin-right': '10px',
+            cursor: 'pointer'
+          }}
+        >
+          { type + ' ' + big }
+        </button>
+        );
+    }
+
+
+    function App () {
+
+      return (
+        <div>
+          <Btn type="Save Changes" big={false} />
+          <Btn type="Continue" big={true} />
+        </div>
+      );
+    }
+
+    const root = document.getElementById('root');
+    ReactDOM.render(<App />, root);
+  </script>
+</body>
+</html>

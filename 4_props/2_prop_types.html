@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>#4.1 memo</title>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+  <!-- cdn about prop types -->
+  <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    // 디폴트 값을 설정했을지라도 propType을 isRequired로 설정했으면 필수로 prop으로 값을 전달해야한다.
+    function Btn({type, fontSize = 14 }) {
+      return (
+        <button
+          style={{
+            backgroundColor: "skyblue",
+            color: 'white',
+            padding: '10px 20px',
+            border: 0,
+            marginRight: '10px',
+            cursor: 'pointer',
+            fontSize
+          }}
+        >
+          { type }
+        </button>
+        );
+    }
+
+   Btn.propTypes = {
+    text: PropTypes.string.isRequired,
+    fontSize: PropTypes.number.isRequired
+   }
+
+    function App () {
+      return (
+        <div>
+          <Btn type="Save Changes" fontSize={16} />
+          <Btn type="Continue" />
+        </div>
+      );
+    }
+
+    const root = document.getElementById('root');
+    ReactDOM.render(<App />, root);
+  </script>
+</body>
+</html>
