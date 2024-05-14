@@ -1,9 +1,9 @@
-import Effect from './Effect';
+import CleanUp from './CleanUp';
 
 function App() {
   return (
     <div>
-      <Effect />
+      <CleanUp />
     </div>
   );
 }
