@@ -1,11 +1,9 @@
-import Button from './Button';
-import styles from './Button.module.css';
+import Effect from './Effect';
 
 function App() {
   return (
     <div>
-      <hi className={styles.title}>Welcome Back</hi>
-      <Button text={"hi"} />
+      <Effect />
     </div>
   );
 }
