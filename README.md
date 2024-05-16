@@ -23,7 +23,7 @@
 
 - Use React
   - **createElement**
-  > React.createElement(태그명, {...속성 및 이벤트}, 태그 안에 들어갈 내용);
+  > `React.createElement(태그명, {...속성 및 이벤트}, 태그 안에 들어갈 내용);`
   ```javascript
     <body>
       <div id="root"></div>
