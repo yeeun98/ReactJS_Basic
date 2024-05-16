@@ -2,6 +2,9 @@
 노마드 코더 - ReactJS로 영화 웹 서비스 만들기
 
 ***
+## * 목차
+[1. Import React CDN & Use React](#Import-React-CDN--Use-React)
+***
 
 ## 📍 Import React CDN & Use React
 
@@ -19,6 +22,8 @@
 ```
 
 - Use React
+  - createElement
+  > React.createElement(태그명, {...속성 및 이벤트}, 태그 안에 들어갈 내용);
 ```javascript
   <body>
     <div id="root"></div>
@@ -44,4 +49,3 @@
       </script>
   </body>
 ```
-React.createElement(태그명, {...속성 및 이벤트}, 태그 안에 들어갈 내용);
