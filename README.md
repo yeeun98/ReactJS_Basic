@@ -3,7 +3,7 @@
 
 ***
 ## * 목차
-[1. Import React CDN & Use React](#Import-React-CDN--Use-React)
+[1. Import React CDN & Use React](#-import-react-cdn--use-react)
 ***
 
 ## 📍 Import React CDN & Use React
