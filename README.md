@@ -3,7 +3,7 @@
 
 ***
 ## * 목차 *
-[1. Import React CDN & Use React](#-import-react-cdn--use-react)
+[1. Import React CDN & Use React](#-import-react-cdn--use-react)<br>
 [2. JSX 적용](#-jsx-적용)
 ***
 
@@ -70,8 +70,6 @@
       }
       const Button = () => (<button style={{backgroundColor: "tomato"}} onClick={() => console.log("im clicked")} >Click me</button>);
       
-      // 컴포넌트의 첫글자는 대문자로 !
-      // React , jsx는 소문자로 작성하면 html태그로 인식
       const Container = () => (
           <div>
             <Title />
@@ -79,8 +77,6 @@
           </div>
         );
   
-      // react18 :: ReactDOM.createRoot(root).render(span);
-      // react17 :: ReactDOM.render(span, root);
       ReactDOM.render(<Container />, root);
     </script>
   </body>
