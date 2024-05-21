@@ -12,7 +12,9 @@
 [2. JSX 적용](#-jsx-적용)
 
 <br/>
+
 ***
+
 <br/>
 
 ## 📍 Import React CDN & Use React
@@ -59,6 +61,8 @@
     </body>
   ```
 
+<br/>
+
 ## 📍 JSX 적용
 > jsx 사용해서 컴포넌트 작성할 때엔 컴포넌트의 첫글자는 대문자로 ! React , jsx는 소문자로 작성하면 html태그로 인식
 ```javascript
@@ -91,10 +95,15 @@
 </html>
 ```
 
+<br/>
+
+
 ## 📍 React Hook
   ### 1. useState
-  > React.useState()는 크기가 2인 배열을 반환헌다.<br>
+  <pre>
+    React.useState()는 크기가 2인 배열을 반환헌다.<br>
     첫 번째 원소는 상태 값이고, 두 번째 원소는 상태를 설정하는 함수이다.
+  </pre> 
 
   ```
     <head>
