@@ -162,6 +162,7 @@
     </body>
   ```
 
+<br/>
   <pre>
     React.useState()의 두 번째 원소는 stateFunction인데, 이 함수의 매개변수 첫번째 값은 State의 현재 값이다.
   </pre> 
