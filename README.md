@@ -162,5 +162,37 @@
     </body>
   ```
 
+  <pre>
+    React.useState()의 두 번째 원소는 stateFunction인데, 이 함수의 매개변수 첫번째 값은 State의 현재 값이다.
+  </pre> 
+  ```javascript
+    <body>
+      <div id="root"></div>
+    
+      <script type="text/babel">
+        function App () {
+          const [counter, setCounter] = React.useState(10);
+          const onClick = () => {
+            // setCounter(counter + 1);
+    
+            /**
+             * 매개변수 첫번째 값은 State의 현재 값! 
+             * ex) counter 변수의 값
+             */
+            setCounter((current) => current + 1);
+          }
+    
+          return (
+            <div>
+              <h3>Total clicks : {counter}</h3>
+              <button onClick={onClick}>Click me</button>
+            </div>
+          );
+        }
+    
+        ReactDOM.render(<App />, root);
+      </script>
+    </body>
+  ```  
 
 
