@@ -8,8 +8,9 @@
 <br/>
 
 ## * 목차 *
-[1. Import React CDN & Use React](#-import-react-cdn--use-react)<br>
-[2. JSX 적용](#-jsx-적용)
+[1. Import React CDN & Use React](#-import-react-cdn--use-react)<br/>
+[2. JSX 적용](#-jsx-적용)<br/>
+[3. React Hook](#-react-hook)
 
 <br/>
 
@@ -34,7 +35,9 @@
 
 - Use React
   - **createElement**
-  > `React.createElement(태그명, {...속성 및 이벤트}, 태그 안에 들어갈 내용);`
+  <pre>
+    React.createElement(태그명, {...속성 및 이벤트}, 태그 안에 들어갈 내용);
+  </pre>
   ```javascript
     <body>
       <div id="root"></div>
@@ -64,7 +67,10 @@
 <br/>
 
 ## 📍 JSX 적용
-> jsx 사용해서 컴포넌트 작성할 때엔 컴포넌트의 첫글자는 대문자로 ! React , jsx는 소문자로 작성하면 html태그로 인식
+<pre>
+  jsx 사용해서 컴포넌트 작성할 때엔 컴포넌트의 첫글자는 대문자로 !
+  React , jsx는 소문자로 작성하면 html태그로 인식
+</pre>
 ```javascript
   <head>
     ...
@@ -101,12 +107,17 @@
 ## 📍 React Hook
   ### 1. useState
   <pre>
-    React.useState()는 크기가 2인 배열을 반환헌다.<br>
+    React.useState()는 크기가 2인 배열을 반환헌다.
     첫 번째 원소는 상태 값이고, 두 번째 원소는 상태를 설정하는 함수이다.
-  </pre> 
 
-  ```
+    useState()의 매개변수는 상태 값의 초기화 값을 넣을 수 있다.
+
+    특징으로는 <i><b>useState로 선언한 데이터가 바뀔 때</b></i> 마다 <i><b>컴포넌트를 리렌더링하고 UI를 refresh</b></i>한다.
+    하지만 React는 setState에서 설정한 값은 유지한체 리렌더링한다.
+  </pre> 
+  ```javascript
     <head>
+      ... 
       <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
       <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
       <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -149,3 +160,6 @@
       </script>
     </body>
   ```
+
+
+
