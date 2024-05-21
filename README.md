@@ -1,17 +1,19 @@
 # ReactJS_Basic
 노마드 코더 - ReactJS로 영화 웹 서비스 만들기
 
-<br>
+<br/>
+
 ***
-<br>
+
+<br/>
 
 ## * 목차 *
 [1. Import React CDN & Use React](#-import-react-cdn--use-react)<br>
 [2. JSX 적용](#-jsx-적용)
 
-<br>
+<br/>
 ***
-<br>
+<br/>
 
 ## 📍 Import React CDN & Use React
 
