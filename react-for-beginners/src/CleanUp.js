@@ -8,14 +8,14 @@ function Hello() {
   //   return () => console.log("destroyed :)"); // this is cleanup code
   // });
 
-  const byeFn = () => {
-    console.log("destroyed :)");
-  };
-  const hiFn = () => {
-    console.log("created :)");
-    return byeFn;
-  };
-  useEffect(hiFn, []);
+  // const byeFn = () => {
+  //   console.log("destroyed :)");
+  // };
+  // const hiFn = () => {
+  //   console.log("created :)");
+  //   return byeFn;
+  // };
+  // useEffect(hiFn, []);
 
   return <h1>Hello</h1>;
 }
@@ -23,6 +23,11 @@ function Hello() {
 function CleanUp() {
   const [showing, setShowing] = useState(false);
   const onClick = () => setShowing((now) => !now)
+
+  useEffect(()=>{
+    console.log("useEffect :)", showing)
+    return () => console.log("useEffect update :)", showing); // showing이 update될 때 동작하는데 여기선 현재 값이 아닌 이전 showing 값을 바라보고 있음!
+  }, [showing]);
 
   return (
     <div>
