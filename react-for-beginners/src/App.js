@@ -1,9 +1,9 @@
-import CleanUp from './CleanUp';
+import CoinTracker from './practice/CoinTracker';
 
 function App() {
   return (
     <div>
-      <CleanUp />
+      <CoinTracker />
     </div>
   );
 }
