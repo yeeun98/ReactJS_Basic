@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import MovieStyle from './Movie.module.css'
 
 function MovieItem({ id, coverImg, title, title_long, genres, summary }) {
   return (
-    <div>
+    <div className={ MovieStyle.item }>
       <img src={coverImg} alt={`${title}`} />
       <Link to={`/movie/${id}`}>{title_long}</Link>
       <ul>
@@ -46,19 +47,22 @@ function Movie () {
     <div>
       { loading ? <h1>Loading...</h1> : 
         <div>
-          {
-            movies.map((v) => (
-              <MovieItem
-                id={v.id}
-                key={v.id}
-                coverImg={v.medium_cover_image}
-                title={v.title}
-                title_long={v.title_long}
-                genres={v.genres}
-                summary={v.summary}
-              />
-            ))
-          }
+          <h1 className={ MovieStyle.title }>Movie List</h1>
+          <section className={ MovieStyle.list_wrap }>
+            {
+              movies.map((v) => (
+                <MovieItem
+                  id={v.id}
+                  key={v.id}
+                  coverImg={v.medium_cover_image}
+                  title={v.title}
+                  title_long={v.title_long}
+                  genres={v.genres}
+                  summary={v.summary}
+                />
+              ))
+            }
+          </section>
         </div>
       }
     </div>
